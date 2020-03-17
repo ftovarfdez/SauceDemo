@@ -2,23 +2,26 @@ package Tests;
 
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
+import org.testng.internal.annotations.DataProviderAnnotation;
 
 import Base.BaseTest;
 import Pages.SauceDemoPages;
 
 public class SauceDemoTest extends BaseTest{
 	
-	@Test
-	public void validUserLogin(){
+	@Test (dataProvider = "standard_user")
+	public void validUserLogin(String loginData){
+		String credentials[] = loginData.split(",");
 		
 		//Validate is at login page
 		Assert.assertTrue(SauceDemoPages.sdLoginPage().isAt());
 		Reporter.log("At login page");
 		
 		//Enter username and password
-		SauceDemoPages.sdLoginPage().login("standard_user", "secret_sauce");
+		SauceDemoPages.sdLoginPage().login(credentials[0], credentials[1]);
 		Reporter.log("Logging in");
 		
 		//Validate is at inventory page

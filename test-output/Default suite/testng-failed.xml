@@ -5,18 +5,17 @@
     <classes>
       <class name="Tests.SauceDemoTest">
         <methods>
-          <include name="logoutFromPage"/>
-          <include name="beforeMethod"/>
-          <include name="completeOrder"/>
-          <include name="openMultipleItemsToCart"/>
-          <include name="validUserLogin"/>
-          <include name="beforeTest"/>
           <include name="fillMailingInformation"/>
           <include name="invalidUserLogin"/>
           <include name="openCartPage"/>
           <include name="validateItemsInCartAndOverviewPages"/>
+          <include name="logoutFromPage"/>
           <include name="fillMailingInformationWithMissingInfo"/>
+          <include name="beforeMethod"/>
           <include name="openSingleItemToCart"/>
+          <include name="openMultipleItemsToCart"/>
+          <include name="validUserLogin"/>
+          <include name="beforeTest"/>
           <include name="afterMethod"/>
         </methods>
       </class> <!-- Tests.SauceDemoTest -->
